@@ -1,0 +1,18 @@
+<a [routerLink]="'/todo/' + todo.id">
+  <h4>{{ todo.title }}</h4>
+</a>
+
+<div class="toggle-wrapper">
+  <label [for]="todo.id" class="label">
+    Mark as {{ todo.isDone ? "Pending" : "Done" }}
+  </label>
+  <input
+    (click)="handleDoneToggle()"
+    [id]="todo.id"
+    [checked]="todo.isDone"
+    type="checkbox"
+    name="done"
+  />
+</div>
+
+<button (click)="handleDelete()">Delete</button>
