@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Todo } from 'src/app/models/todo.model';
 import { TodoService } from 'src/app/service/todo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-todo',
@@ -18,6 +19,7 @@ export class AddTodoComponent implements OnInit {
   });
 
   constructor(
+    private router: Router,
     private formBuilder: FormBuilder,
     private todoService: TodoService
   ) {}
@@ -33,5 +35,6 @@ export class AddTodoComponent implements OnInit {
 
     this.todoService.addNewItem(todo);
     this.addTodoForm.reset();
+    this.router.navigate(['todo', id]);
   }
 }

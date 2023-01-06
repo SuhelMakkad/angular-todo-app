@@ -37,4 +37,8 @@ export class TodoComponent implements OnInit {
     this.todoService.deleteItem(this.todoId);
     this.router.navigate(['/']);
   }
+
+  handleDoneToggle() {
+    this.todoService.toggleDone(this.todoId);
+  }
 }

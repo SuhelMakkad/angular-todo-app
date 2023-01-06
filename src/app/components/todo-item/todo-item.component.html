@@ -1,18 +1,25 @@
-<a [routerLink]="'/todo/' + todo.id">
-  <h4>{{ todo.title }}</h4>
-</a>
+<div class="flex flex-col gap-1 pb-2">
+  <a [routerLink]="'/todo/' + todo.id">
+    <h4 class="text-xl capitalize">
+      <span [className]="todo.isDone ? 'line-through' : ''">
+        {{ todo.title }}
+      </span>
+    </h4>
+  </a>
 
-<div class="toggle-wrapper">
-  <label [for]="todo.id" class="label">
-    Mark as {{ todo.isDone ? "Pending" : "Done" }}
-  </label>
-  <input
-    (click)="handleDoneToggle()"
-    [id]="todo.id"
-    [checked]="todo.isDone"
-    type="checkbox"
-    name="done"
-  />
+  <div class="flex gap-2">
+    <button
+      (click)="handleDoneToggle()"
+      class="max-w-fit text-center mt-2 bg-blue-400 text-white py-1 px-2 rounded"
+    >
+      Mark {{ todo.isDone ? "Pending" : "Done" }}
+    </button>
+
+    <button
+      (click)="handleDelete()"
+      class="max-w-fit text-center mt-2 bg-red-400 text-white py-1 px-2 rounded"
+    >
+      Delete
+    </button>
+  </div>
 </div>
-
-<button (click)="handleDelete()">Delete</button>
