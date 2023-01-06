@@ -1,13 +1,13 @@
 <form class="p-4" [formGroup]="addTodoForm" (ngSubmit)="handleFormSubmit()">
   <div class="flex flex-col gap-1">
     <label for="title">Title </label>
-    <input class="border border-black rounded" id="title" type="text" formControlName="title" required />
+    <input class="border border-black rounded px-1 py-2" id="title" type="text" formControlName="title" required />
   </div>
 
   <div class="flex flex-col gap-1">
     <label for="description"> Description </label>
     <input
-      class="border border-black rounded" 
+      class="border border-black rounded px-1 py-2" 
       id="description"
       type="text"
       formControlName="description"
