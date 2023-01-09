@@ -1,6 +1,6 @@
 <h1 class="text-center mt-6 text-3xl font-medium">Your Todo List!</h1>
 
-<ul class="p-4">
+<ul *ngIf="todos && todos.length" class="p-4">
   <li *ngFor="let todo of todos">
     <app-todo-item
       (toggleDone)="handleToggleDone($event)"
@@ -8,3 +8,15 @@
     ></app-todo-item>
   </li>
 </ul>
+
+<div
+  *ngIf="!todos || !todos.length"
+  class="flex flex-col gap-1 text-center bg-slate-200 text-gray-700 mt-8 px-1 py-4 rounded capitalize"
+>
+  <span class="text-md">Its Empty Here!</span>
+  <span class="text-sm">
+    Click on
+    <span class="bg-slate-400 text-gray-200 text-xs px-1 py-0.5 pl-1.5 rounded">Add Todo +</span>
+    to add item
+  </span>
+</div>
