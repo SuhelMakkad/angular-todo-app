@@ -7,14 +7,14 @@
   <div class="flex gap-2">
     <button
       (click)="handleDoneToggle()"
-      class="max-w-fit text-center mt-2 bg-blue-400 text-white py-1 px-2 rounded"
+      class="text-xs max-w-fit text-center mt-2 bg-blue-400 text-white py-1 px-2 rounded"
     >
       Mark {{ todo.isDone ? "Pending" : "Done" }}
     </button>
 
     <button
       (click)="handleDelete()"
-      class="max-w-fit text-center mt-2 bg-red-400 text-white py-1 px-2 rounded"
+      class="text-xs max-w-fit text-center mt-2 bg-red-400 text-white py-1 px-2 rounded"
     >
       Delete
     </button>
